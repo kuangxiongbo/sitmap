@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>共享网站导航</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-inner">
+      <h1>共享网站导航</h1>
+      <div class="header-actions">
+        <div class="view-toggle" role="tablist" aria-label="视图切换">
+          <button id="btnViewCard" class="toggle-btn active" role="tab" aria-selected="true">卡片</button>
+          <button id="btnViewList" class="toggle-btn" role="tab" aria-selected="false">列表</button>
+        </div>
+        <button id="btnHistory" class="ghost-btn" title="查看历史">历史</button>
+        <button id="btnThemeToggle" class="ghost-btn" aria-pressed="false" title="切换深浅色">浅色/深色</button>
+        <button id="btnNew" class="primary-btn">新增链接</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="formSection" class="panel" hidden>
+      <h2 id="formTitle">新增链接</h2>
+      <form id="linkForm" novalidate>
+        <input type="hidden" id="itemId">
+
+        <div class="form-row">
+          <label for="title">标题<span class="req">*</span></label>
+          <input id="title" name="title" type="text" placeholder="例如：人事系统" required>
+          <div class="error" data-for="title"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="url">链接<span class="req">*</span></label>
+          <input id="url" name="url" type="url" placeholder="例如：https://intranet.example.com/hr" required>
+          <div class="error" data-for="url"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="description">描述</label>
+          <textarea id="description" name="description" rows="3" placeholder="简要描述用途"></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="icon">图标URL</label>
+          <input id="icon" name="icon" type="url" placeholder="例如：https://example.com/icon.png">
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="primary-btn">保存</button>
+          <button type="button" id="btnCancelEdit" class="ghost-btn">取消</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="emptyState" class="empty" hidden>
+      <p>还没有任何链接，点击右上角的“新增链接”开始吧。</p>
+    </section>
+
+    <section id="cardsView" class="cards" aria-label="卡片视图"></section>
+
+    <section id="listView" class="list" aria-label="列表视图" hidden>
+      <div id="listContainer" class="list-cards"></div>
+    </section>
+
+    <section id="historyPanel" class="panel" hidden>
+      <h2>版本历史</h2>
+      <div id="historyList" class="history-list"></div>
+      <div class="form-actions">
+        <button id="btnCloseHistory" type="button" class="ghost-btn">关闭</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <small>所有人可编辑（使用本地存储保存）。</small>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // 提示：可将此站点文件夹直接通过本地文件协议或任意静态服务器打开
+  </script>
+  </body>
+  </html>
+
+
