@@ -1,0 +1,21 @@
+{
+  "name": "sitmap",
+  "version": "1.0.0",
+  "description": "共享网站导航",
+  "main": "server/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "lowdb": "^7.0.1",
+    "nanoid": "^5.0.4"
+  },
+  "keywords": ["navigation", "website", "bookmark"],
+  "author": "kuangxiongbo",
+  "license": "MIT"
+}
+

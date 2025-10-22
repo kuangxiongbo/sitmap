@@ -8,6 +8,9 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
 
+// 提供静态文件服务
+app.use(express.static('.'));
+
 // 简易 JSON 存储
 const db = new Low(new JSONFile('./data.json'), { items: [], history: [] });
 await db.read();
